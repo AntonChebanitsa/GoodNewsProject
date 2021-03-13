@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GoodNewsProject.DAL.Core;
+using Microsoft.EntityFrameworkCore;
 
 namespace GoodNewsProject
 {
@@ -23,6 +25,9 @@ namespace GoodNewsProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<GoodNewsProjectContext>(opt =>
+                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddControllersWithViews();
         }
 
