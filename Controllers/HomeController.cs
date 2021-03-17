@@ -23,7 +23,7 @@ namespace GoodNewsProject.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Aggregated()
         {
             return View();
         }
